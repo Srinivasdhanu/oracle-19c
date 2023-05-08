@@ -1,0 +1,53 @@
+[Oracle]
+DISTRIBUTION=FALSE
+LICENSE_LOCATION=
+JRE_LOCATION=../../jdk/jre
+OUI_LOCATION=..
+OUI_CORE_LOCATION=..
+OPATCH_LOCATION=..
+NLS_ENABLED=TRUE
+JRE_MEMORY_OPTIONS=" %s_javaFlag% -Xms150m -Xmx2048m -XX:-OmitStackTraceInFastThrow -XX:CompileCommand=quiet -XX:CompileCommand=exclude,javax/swing/text/GlyphView,getBreakSpot "
+NO_BROWSE=/net
+BOOTSTRAP=FALSE
+CLUSTERWARE={"oracle.crs","10.1.0.2.0"}
+VENDORCLUSTERWARE=TRUE
+#THIN_JDBC_FILENAME is optional and defaults to classes12.jar
+#The value specified for this should be packaged with OUI, and should 
+#be relative to <OUI expanded stagedir>/jlib/
+THIN_JDBC_FILENAME=classes12.jar
+#JRE_OSDPARAM is to set OS dependent param for JRE ( mainly for native VM in 1.3.1)
+#JRE_OSDPARAM is optional and should be set to -native for the JRE's
+#that support native VM ( mainly for Unix platforms ), in JRE 1.3.1
+#For JRE 1.4.1 this should be set to empty or the type of VM that is 
+#supported client/server. The default value is -native in UNIX platforms
+#that supports native VM
+#Unix supporting native - JRE_OSDPARAM="-native" 
+#Unix NOT supporting native and 1.4.1 - JRE_OSDPARAM="" 
+#Windows : DO NOT SET or JRE_OSDPARAM=""
+OUI_VERSION=12.2.0.9.0
+#RUN_OUICA specifies the batch script name that needs to be run
+#The script is ouica.bat for win32, and ouica.sh for solaris. 
+#If the value is not specified, then the OUICA script is not run
+RUN_OUICA=ouica.sh
+SILENT_VARIABLE_VALIDATION=TRUE
+UMASK=022
+#SHOW_HOSTNAME=ALWAYS_SHOW shows the hostname panel always
+#SHOW_HOSTNAME=NEVER_SHOW does not the hostname panel
+#SHOW_HOSTNAME=CONDITION_SHOW shows the hostname panel on condition
+SHOW_HOSTNAME=NEVER_SHOW
+INSTALL_CLASS=oracle.install.ivw.common.util.OracleNodeScaler
+#Variables to set for extra classes to load in the runtime. This location can be
+#absolute or relative to the location of runInstaller/setup.exe
+EXT_JLIB=../../inventory/Scripts/ext/jlib
+EXT_LIB=../../inventory/Scripts/ext/lib
+EXT_BIN=../../inventory/Scripts/ext/bin
+MSVCREDIST_LOC=
+MSVCREDIST_FLAGS=
+MSVCREDIST_INSTALL=
+
+
+[Generic Prereqs]
+TEMP_SPACE=120
+SWAP_SPACE=150
+MIN_DISPLAY_COLORS=256
+
